@@ -1,21 +1,25 @@
-import React from "react";
+import React, { createContext } from "react";
 import "./App.css";
 import DB from "./assets/DB.json";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import InputBlock from "./components/InputBlock";
 import Sidebar from "./components/Sidebar";
+ export const Context = React.createContext()
 
 function App() {
 
+ 
+
   const [search, setSearch] = React.useState('')
   return (
+    <Context.Provider value={{search, setSearch}}>
     <div className="App">
       <div className="container">
         <Header/>
       </div>
       <div className="container">
-        <InputBlock  search={search} setSearch={setSearch}/>
+        <InputBlock />
       </div>
       <div className="container">
         <div className="wrapper">
@@ -35,6 +39,7 @@ function App() {
       </div>
       </div>
     </div>
+    </Context.Provider>
   );
 }
 
