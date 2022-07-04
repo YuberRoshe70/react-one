@@ -6,7 +6,7 @@ const Header = () => {
     setModelsIndex(i)
   }
 
-  const models = ['MERCEDES-BENZ','BMW','TOYOTA','HONDA', "FORD"]
+  const models = ['ALL AUTO','TOYOTA','MERCEDES','BMW','HONDA', "FORD"]
   const [modelsIndex, setModelsIndex] = React.useState(0)
 
   return (

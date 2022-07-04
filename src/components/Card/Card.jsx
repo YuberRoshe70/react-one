@@ -24,7 +24,7 @@ const Card = ({img, title, description, price}) => {
   <div className="col-btn"  onClick={bay}>+</div>
 </div>
        
-        <a href="#" className="btn ">Купить</a>
+        <a href="/#" className="btn ">Купить</a>
       </div>
       </div>
     </div>
