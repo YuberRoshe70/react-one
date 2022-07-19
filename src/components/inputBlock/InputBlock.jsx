@@ -1,9 +1,11 @@
 
 import React from 'react'
+//import s from './InputBlock.module.css'
+
 
 
 import { useSelector, useDispatch } from 'react-redux'
-import { setSearch} from '../redux/slices/Modelsslice.js'
+import { setSearch} from '../../redux/slices/Modelsslice.js'
 
 const InputBlock = ({option,setOption, optionValue}) => {
 
@@ -11,7 +13,7 @@ const InputBlock = ({option,setOption, optionValue}) => {
   const dispatch = useDispatch()
 
   const options = ["Все", "алфавиту от А - Я", "цене", "популярности"]
-  // const [option, setOption] = React.useState(0)
+ 
   const [visible, setVisible] = React.useState(false)
 
   const selected = (i) => {
@@ -21,8 +23,7 @@ const InputBlock = ({option,setOption, optionValue}) => {
    
   }
 
-  
-
+ 
 
   return (
     <div className="input__block">
@@ -32,9 +33,9 @@ const InputBlock = ({option,setOption, optionValue}) => {
         <span >{options[option]}</span>
 
       </div>
-      {visible && <div className="sort__popup">
+      {visible && <div className='sort__popup'>
         <ul >
-          {options.map((item, i) => <li className='popup-value' onClick={() => selected(i)} key={i}>{item}</li>)}
+          {options.map((item, i) => <li className='popup__value' onClick={() => selected(i)}  key={i}>{item}</li>)}
         </ul>
       </div>}
     </div>

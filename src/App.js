@@ -1,20 +1,23 @@
 import React from "react";
-import { useSelector } from "react-redux";
+
+
+import {Routes, Route} from "react-router-dom";
 import "./App.css";
 import axios from "axios";
 import DB from "./assets/DB.json";
-import Card from "./components/Card/Card";
 import Header from "./components/Header";
-import InputBlock from "./components/InputBlock";
+import InputBlock from "./components/inputBlock/InputBlock.jsx";
 import Sidebar from "./components/Sidebar";
-import Skeleton from "./components/Card/Skeleton";
+import Toyota from "./pages/Toyota";
+import Home from "./pages/Home";
+import Mercedes from "./pages/Mercedes";
+import Bmw from "./pages/Bmw";
 
 function App() {
   const [option, setOption] = React.useState(0);
-  const [isLoading, setIsLoading] = React.useState(true);
-  const search = useSelector((state) => state.modelReducer.search);
-  //-------------------------------------
+  const [modelsIndex, setModelsIndex] = React.useState(0);
   
+  //-------------------------------------
 
   const sortAlfabet = () => {
     DB.sort((a, b) => a.title.localeCompare(b.title));
@@ -24,11 +27,11 @@ function App() {
   };
 
   const sortPrice = () => {
-    return DB.sort((a, b) => a.price - b.price);
+    DB.sort((a, b) => a.price - b.price);
   };
 
   const sortAll = () => {
-    return DB.sort((a, b) => a.id - b.id);
+    DB.sort((a, b) => a.id - b.id);
   };
 
   const optionValue = (i) => {
@@ -46,7 +49,6 @@ function App() {
     }
   };
 
- 
   //---------------------------------------
 
   // React.useEffect(() => {
@@ -58,16 +60,16 @@ function App() {
   //     });
   // }, []);
 
-  React.useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  }, []);
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 2000);
+  // }, []);
 
   return (
     <div className="App">
       <div className="container">
-        <Header  />
+        <Header modelsIndex={modelsIndex} setModelsIndex={setModelsIndex} />
       </div>
       <div className="container">
         <InputBlock
@@ -80,13 +82,16 @@ function App() {
         <div className="wrapper">
           <Sidebar />
           <div className="block">
-            {isLoading
-              ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
-              : DB.filter((item) =>
-                  item.title
-                    .toLocaleLowerCase()
-                    .includes(search.toLocaleLowerCase())
-                ).map((item, i) => <Card {...item} key={i} />)}
+            <Routes>
+            <Route path='/' element={ <Home />}/>
+           <Route path='home' element={ <Home />}/>
+           <Route path="toyota" element={ <Toyota />}/>
+           <Route path="mercedes" element={ <Mercedes/>}/>
+           <Route path="bmw" element={ <Bmw/>}/>
+          
+           
+           
+            </Routes>
           </div>
         </div>
       </div>

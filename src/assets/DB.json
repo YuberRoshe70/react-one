@@ -5,7 +5,8 @@
     "title": "Toyota Corolla",
     "description": "Mercedes-Benz E-Class нового поколения буквально нашпигован электронными системами",
     "price": 9350,
-    "rating": 3
+    "rating": 3,
+    "brand": 2
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "title": "Toyota Camry",
     "description": "Mercedes-Benz E-Class нового поколения буквально нашпигован электронными системами",
     "price": 6350,
-    "rating": 5
+    "rating": 5,
+    "brand": 2
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "title": "Bmw m7",
     "description": "Mercedes-Benz E-Class нового поколения буквально нашпигован электронными системами",
     "price": 2950,
-    "rating": 4
+    "rating": 4,
+    "brand":  "Bmw"
   },
   {
     "id": 4,
@@ -36,8 +39,9 @@
     "img": "images/bmwwhite.png",
     "title": "Bmw m3",
     "description": "Mercedes-Benz E-Class нового поколения буквально нашпигован электронными системами",
-    "price": 4450,
-    "rating": 3
+    "price": 12450,
+    "rating": 3,
+    "brand": "Bmw"
   },
   {
     "id": 6,
@@ -45,6 +49,7 @@
     "title": "Bmw m5",
     "description": "Mercedes-Benz E-Class нового поколения буквально нашпигован электронными системами",
     "price": 7350,
-    "rating": 5
+    "rating": 5,
+    "brand":  "Bmw"
   }
 ]
