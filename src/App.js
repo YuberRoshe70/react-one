@@ -12,6 +12,7 @@ import Toyota from "./pages/Toyota";
 import Home from "./pages/Home";
 import Mercedes from "./pages/Mercedes";
 import Bmw from "./pages/Bmw";
+import Cart from "./components/Cart";
 
 function App() {
   const [option, setOption] = React.useState(0);
@@ -88,6 +89,8 @@ function App() {
            <Route path="toyota" element={ <Toyota />}/>
            <Route path="mercedes" element={ <Mercedes/>}/>
            <Route path="bmw" element={ <Bmw/>}/>
+           <Route path="cart" element={<Cart/>}/>
+           
           
            
            
@@ -95,6 +98,7 @@ function App() {
           </div>
         </div>
       </div>
+     
     </div>
   );
 }

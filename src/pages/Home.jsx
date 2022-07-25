@@ -7,15 +7,15 @@ const Home = () => {
 
     // const [option, setOption] = React.useState(0);
     // const [modelsIndex, setModelsIndex] = React.useState(0);
-    const [isLoading, setIsLoading] = React.useState(true);
+    const [isLoading, setIsLoading] = React.useState(false);
     const search = useSelector((state) => state.modelReducer.search);
 
     
-  React.useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  }, []);
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 1000);
+  // }, []);
 
     return (
         <>

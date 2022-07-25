@@ -1,6 +1,13 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+//import { addItems } from "../redux/slices/Cartslice"
+import CartItem from './CartItem'
 
 const Cart = () => {
+
+  //const dispatch = useDispatch()
+  const item = useSelector((state) => state.cart.items)
+  const { totalPrice} = useSelector((state) => state.cart)
   return (
     <div className="row" >
       <div className="header_title">
@@ -17,40 +24,7 @@ const Cart = () => {
      
       
         <div className="table_product">
-        
-            <div className="product_block">
-              <div className="img_product">
-                <img src="images/bmwcross.png"  width={120} height={70}/>
-                <p className="product_descript"> Игрушка BMW X5.</p>
-              </div>
-           
-              <div className="product_price">
-                  <p className="current_price">1&nbsp;390&nbsp;₽</p>
-                </div>
-           
-            <div className="row_product">
-            <div className="product_order_count">
-              <div className="input_price">
-            
-                <div className="price_del circle">-</div>
-              
-                <p>1</p>
-               
-                  <div className="price_add circle">+</div>
-             
-              </div>
-            </div>
-            <div className="col-1 product_order_price">
-              <p className="current_price">1&nbsp;390&nbsp;₽</p>
-            </div>
-         
-            <div className="col-2 product_order_delete">
-              <button className="order_del circle">
-               X
-              </button>
-            </div>
-          </div>
-          </div>
+       {item.map((item) =>  <CartItem {...item} key={item.id}/>)}
             
         </div>
      
@@ -58,7 +32,7 @@ const Cart = () => {
      <div className="pay">
         <div className="total_sum">
           <ul>
-            <a href='#' className=' btn'>Итого к оплате: <span>1&nbsp;390&nbsp;₽</span></a>
+            <a href='#' className=' btn'>Итого к оплате: <span>{totalPrice}₽</span></a>
           </ul>
           </div>
           <div className="bay_product">
