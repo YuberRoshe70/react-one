@@ -15,7 +15,7 @@ const Sidebar = () => {
         <div className="sidebar__item blue"></div>
         <div className="sidebar__item text">Blue</div>
       </div>
-      <div className="sidebar__quantity">3</div>
+      <div className="sidebar__quantity">32222222</div>
     </div>
     <div className="sidebar__color">
       <div className="wrap">
