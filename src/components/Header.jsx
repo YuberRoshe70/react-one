@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from 'react-redux'
 //import { setModelsIndex } from '../redux/slices/Modelsslice'
 
 const Header = ({ modelsIndex, setModelsIndex }) => {
-  const { totalPrice,items } = useSelector((state) => state.cart)
-  
+  const { totalPrice } = useSelector((state) => state.cart)
+
 
   // const modelsIndex = useSelector((state) => state.modelReducer.modelsIndex)
   // const dispatch = useDispatch()
@@ -13,8 +13,6 @@ const Header = ({ modelsIndex, setModelsIndex }) => {
   const findModel = (i) => {
     //dispatch(setModelsIndex(i))
     setModelsIndex(i)
-
-
   }
 
   const models = ['HOME', 'TOYOTA', 'MERCEDES ', 'BMW']
@@ -27,14 +25,14 @@ const Header = ({ modelsIndex, setModelsIndex }) => {
         <ul className='header__ul'>
 
           {models.map((item, i) => <li onClick={() => findModel(i)} className={modelsIndex === i ? 'active' : ''}
-            key={i}><Link to={item} > {item}</Link></li>)}
+            key={i}><Link to={item}   > {item}</Link></li>)}
         </ul>
       </div>
       <div className="header__cart"><Link to="cart">
         <img src='images/wallet.png' />
         <b>{totalPrice}</b>
         <span> руб</span> </Link>
-        </div>
+      </div>
     </div>
   )
 }

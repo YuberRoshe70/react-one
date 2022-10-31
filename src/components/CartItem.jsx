@@ -1,26 +1,22 @@
 import React from 'react'
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch} from "react-redux"
 import { addItems } from "../redux/slices/Cartslice"
 import { addCountPlus } from "../redux/slices/Cartslice"
 import { addCountMinus } from "../redux/slices/Cartslice"
 
 const CartItem = ({ id, img, title, price, count }) => {
   const dispatch = useDispatch()
-  // const countMinus = () => {
-  //   dispatch(addItems({
-  //     id
-  //   }))
-  // }
+  
   const countPlus = () => {
     dispatch(addCountPlus({
       id
     }))
     dispatch(addItems({
-          id
-         }))
+      id
+    }))
   }
 
-  
+
   const countMinus = () => {
     dispatch(addCountMinus({
       id,
@@ -42,7 +38,7 @@ const CartItem = ({ id, img, title, price, count }) => {
         <div className="product_order_count">
           <div className="input_price">
 
-            <div className="price_del circle"  onClick={countMinus}>-</div>
+            <div className="price_del circle" onClick={countMinus}>-</div>
 
             <p>{count}</p>
 

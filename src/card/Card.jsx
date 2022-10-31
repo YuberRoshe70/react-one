@@ -7,13 +7,8 @@ import { addCountMinus } from "../redux/slices/Cartslice"
 
 const Card = ({ id, img, title, description, price }) => {
   const dispatch = useDispatch()
-
   const cartItem = useSelector((state) => state.cart.items.find(obj => obj.id === id))
-
-
   const addedCount = cartItem ? cartItem.count : 0
-
-
 
   const addCartItem = () => {
     const item = {
@@ -21,11 +16,7 @@ const Card = ({ id, img, title, description, price }) => {
       price
     }
     dispatch(addItems(item))
-   
-   
-
   }
-
   const countPlus = () => {
     dispatch(addCountPlus({
       id,
@@ -34,16 +25,13 @@ const Card = ({ id, img, title, description, price }) => {
       description,
       price,
     }))
-   
-  }
 
-  
+  }
   const countMinus = () => {
     dispatch(addCountMinus({
       id,
     }))
   }
-
 
   return (
     <div className="card" >
@@ -57,12 +45,11 @@ const Card = ({ id, img, title, description, price }) => {
         <p className="card-price"><b>Цена: <span>{price} руб</span></b></p>
         <div className="card-bay">
           <div className="card_col">
-            <div className="col-btn"  onClick={countMinus}>-</div>
+            <div className="col-btn" onClick={countMinus}>-</div>
             <div className="col-btn">{addedCount}</div>
             <div className="col-btn" onClick={countPlus}>+</div>
           </div>
-
-          <div  className="btn" onClick={addCartItem}>Купить</div>
+          <div className="btn" onClick={addCartItem}>Купить</div>
         </div>
       </div>
     </div>
@@ -71,4 +58,3 @@ const Card = ({ id, img, title, description, price }) => {
 
 export default Card
 
-//onClick={() => setCount(count > 1 ? count - 1 : 1)}
