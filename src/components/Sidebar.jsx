@@ -8,7 +8,7 @@ const Sidebar = () => {
         <div className="sidebar__item red"></div>
         <div className="sidebar__item text">Red</div>
       </div>
-      <div className="sidebar__quantity">1</div>
+      <div className="sidebar__quantity"></div>
     </div>
     <div className="sidebar__color">
       <div className="wrap">
